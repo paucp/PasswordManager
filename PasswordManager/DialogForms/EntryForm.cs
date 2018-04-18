@@ -4,12 +4,12 @@ using PasswordManager.Engine.Passwords;
 
 namespace PasswordManager
 {
-    public partial class AddEntryForm : Form
+    public partial class EntryForm : Form
     {
         public bool EntryCreatedOrEdited = false;
         public EntryData Entry;
 
-        public AddEntryForm()
+        public EntryForm()
         {
             InitializeComponent();
             panel2.BackColor = Settings.ColorAccent;
@@ -52,6 +52,12 @@ namespace PasswordManager
             string Password = PasswordGenerator.GeneratePassword((int)numericUpDown1.Value);
             textBoxPassword.Text = Password;
             textBoxPWRepeat.Text = Password;
+        }
+
+        private void checkBoxShowPasswords_CheckedChanged(object sender, EventArgs e)
+        {
+            textBoxPassword.UseSystemPasswordChar = !checkBoxShowPasswords.Checked;
+            textBoxPWRepeat.UseSystemPasswordChar = !checkBoxShowPasswords.Checked;
         }
     }
 }

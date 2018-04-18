@@ -14,7 +14,7 @@ namespace PasswordManager.Engine.Archive
 
         public static void WriteEntries(List<EntryData> entries)
         {
-            BackupSystem.BackupManager.GenerateBackup();
+            BackupSystem.BackupManager.GenerateNewBackup();
             IOManager.WriteArchive(entries);            
             CMessageBox.ShowDialog(Messages.SuccessSaving);
         }

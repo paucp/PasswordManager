@@ -8,7 +8,18 @@ namespace Test
 {
     internal class Program
     {
-
+        public static byte[] MixBytes2(byte[] input, int seed)
+        {
+            Random RNG = new Random(seed);
+            short[] output = new short[input.Length];
+            bool[] cellMap = new bool[input.Length];
+            for (int i = 0; i < input.Length; i++)
+            {
+                int Index; 
+                while(output )
+            }
+            return output;
+        }
         public static byte[] MixBytes(byte[] input, int seed)
         {
             Random RNG = new Random(seed);
@@ -70,18 +81,18 @@ namespace Test
                 byte[] buffer = Encoding.UTF8.GetBytes(str);                
                 byte[] mixed = MixBytes(buffer, 0);             
                 byte[] unmixed = InverseMixBytes(mixed, 0);           
-                Console.ForegroundColor = ConsoleColor.DarkGray;
-                Console.WriteLine("MIXED:   " + Encoding.UTF8.GetString(mixed));              
+                //Console.ForegroundColor = ConsoleColor.DarkGray;
+                //Console.WriteLine("MIXED:   " + Encoding.UTF8.GetString(mixed));              
                 bool result = ByteEquals(buffer, unmixed);
-                if (result)
-                    Console.ForegroundColor = ConsoleColor.Green;
-                else Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("UNMIXED: " + Encoding.UTF8.GetString(unmixed));
-                Console.ForegroundColor = ConsoleColor.Gray;
+                //if (result)
+                  //  Console.ForegroundColor = ConsoleColor.Green;
+                //else Console.ForegroundColor = ConsoleColor.Red;
+                //Console.WriteLine("UNMIXED: " + Encoding.UTF8.GetString(unmixed));
+               // Console.ForegroundColor = ConsoleColor.Gray;
                 int sim = CalcSimilarity(mixed, unmixed);
                 similarity += sim;
-                Console.WriteLine("SIMILARITY: " + sim);
-                Console.WriteLine();
+                //Console.WriteLine("SIMILARITY: " + sim);
+                //Console.WriteLine();
             }
             sw.Stop();
             Console.WriteLine("TOTAL TIME: " + sw.ElapsedMilliseconds + "ms");

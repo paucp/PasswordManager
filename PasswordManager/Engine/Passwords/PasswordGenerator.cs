@@ -6,7 +6,7 @@ namespace PasswordManager.Engine.Passwords
 {
     public class PasswordGenerator
     {
-        private static char[] Charmap = new char[] { };
+        private static char[] Charmap = LoadChars();
         private static Random RNG = new Random();
 
         public static string GeneratePassword(int length = 32)
@@ -17,13 +17,10 @@ namespace PasswordManager.Engine.Passwords
             return sb.ToString();
         }
 
-        private static char GetRandomChar()
-        {
-            if (Charmap.Length == 0) LoadChars();
-            return Charmap[RNG.Next(0, Charmap.Length)];
-        }
+        private static char GetRandomChar()               
+           => Charmap[RNG.Next(0, Charmap.Length)];       
 
-        private static void LoadChars()
-            => Charmap = File.ReadAllText(Settings.Charmap).ToCharArray();
+        private static char[] LoadChars()
+            => File.ReadAllText(Settings.Charmap).ToCharArray();
     }
 }

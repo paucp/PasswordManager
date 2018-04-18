@@ -5,8 +5,7 @@ namespace PasswordManager
 {
     public static class Settings
     {
-
-        public const string CurrentVersion = "0.500";   
+        public const string CurrentVersion = "0.6";   
 
         public static Color ColorAccent = Color.FromArgb(255, 63, 81, 181);
         public static Color SearchBoxFocusColor = Color.FromArgb(200, 96, 125, 170);
@@ -17,7 +16,7 @@ namespace PasswordManager
 
         public const int AESKeySize = 256;
         public const int AESBlockSize = 128;
-        public const int AESPBKDF2Iterations = 2048;
+        public const int AESPBKDF2Iterations = 4096;
         public const int DerivationSize = 32;
         public const int IVSize = 16;
         public const int SaltSize = 256;

@@ -3,10 +3,10 @@ namespace PasswordManager.Engine.Crypto
 {
     public static class CurrentSession
     {      
-        private static LoginData loginData;            
-        public static LoginData LoginData => loginData;
+        private static LoginData SessionData;            
+        public static LoginData SessionLoginData => SessionData;
 
         public static void SetLoginData(LoginData data) 
-            => loginData = data;       
+            => SessionData = data;       
     }
 }

@@ -79,7 +79,7 @@ namespace PasswordManager
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            AddEntryForm NewPassword = new AddEntryForm();
+            EntryForm NewPassword = new EntryForm();
             NewPassword.ShowDialog();
             if (!NewPassword.EntryCreatedOrEdited)
                 return;        
@@ -90,7 +90,7 @@ namespace PasswordManager
 
         private void buttonDeleteAll_Click(object sender, EventArgs e)
         {
-            if (!CMessageBox.ShowDialog(Messages.DeleteEntriesCheck))
+            if (CMessageBox.ShowDialog(Messages.DeleteEntriesCheck))
             {
                 EntryList.Clear();
                 materialListView1.Items.Clear();
@@ -118,7 +118,7 @@ namespace PasswordManager
         private void buttonEdit_Click(object sender, EventArgs e)
         {
             int index = materialListView1.SelectedIndices[0];
-            AddEntryForm editEntryForm = new AddEntryForm();
+            EntryForm editEntryForm = new EntryForm();
             editEntryForm.ShowData(EntryList[index]);
             editEntryForm.ShowDialog();
             if (!editEntryForm.EntryCreatedOrEdited)
@@ -154,7 +154,7 @@ namespace PasswordManager
 
         private void copyUsernameToClipboardToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ClipboardManager.SetClipboardString(EntryList[materialListView1.SelectedIndices[0]].Username, this);
+            Clipboard.SetText(EntryList[materialListView1.SelectedIndices[0]].Username);
             CMessageBox.ShowDialog(Messages.CopiedToClipboard);
         }
 
@@ -168,8 +168,7 @@ namespace PasswordManager
         {
             bool enable = materialListView1.SelectedItems.Count != 0;
             deleteToolStripMenuItem.Enabled = enable;
-            copyPasswordToClipboardToolStripMenuItem.Enabled = enable;
-            copyUsernameToClipboardToolStripMenuItem.Enabled = enable;
+            ShowPasswordToClipboardToolStripMenuItem.Enabled = enable;           
             editToolStripMenuItem.Enabled = enable;
         }
 
@@ -192,17 +191,14 @@ namespace PasswordManager
 
         private void SelectItem(int Index)
         {
-            if (Index == -1)
+            if (Index != -1)
             {
-                materialListView1.SelectedItems[0].Focused = false;
-                materialListView1.SelectedItems[0].Selected = false;
-                return;
+                materialListView1.Select();
+                materialListView1.Focus();
+                materialListView1.Items[Index].Focused = true;
+                materialListView1.Items[Index].Selected = true;
+                materialListView1.Items[Index].EnsureVisible();
             }
-            materialListView1.Select();
-            materialListView1.Focus();
-            materialListView1.Items[Index].Focused = true;
-            materialListView1.Items[Index].Selected = true;
-            materialListView1.Items[Index].EnsureVisible();
         }
 
         private void textBoxSearch_KeyDown(object sender, KeyEventArgs e)

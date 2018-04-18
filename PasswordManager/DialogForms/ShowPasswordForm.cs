@@ -22,7 +22,7 @@ namespace PasswordManager
            => Close();
         private void SetClipboard(string s)
         {
-            ClipboardManager.SetClipboardString(s, this);
+            Clipboard.SetText(s);
             CMessageBox.ShowDialog(Messages.CopiedToClipboard);
         }
         private void buttonCopy_Click(object sender, EventArgs e)

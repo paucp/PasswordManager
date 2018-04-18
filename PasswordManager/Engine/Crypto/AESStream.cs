@@ -27,8 +27,8 @@ namespace PasswordManager.Engine.Crypto
             RijndaelManaged AES = new RijndaelManaged();         
             AES.KeySize = Settings.AESKeySize;
             AES.BlockSize = Settings.AESBlockSize;
-            AES.Key = CurrentSession.LoginData.DerivedMasterkey;
-            AES.IV = CurrentSession.LoginData.IV;
+            AES.Key = CurrentSession.SessionLoginData.DerivedMasterkey;
+            AES.IV = CurrentSession.SessionLoginData.IV;
             AES.Mode = CipherMode.CBC;           
             return AES;
         }

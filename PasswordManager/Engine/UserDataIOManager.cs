@@ -33,7 +33,7 @@ namespace PasswordManager
             => LoginDataManager.CheckPassword(MasterKey);       
 
         private static void SaveCurrentSessionLoginData()        
-            => File.WriteAllBytes(Settings.LoginDataPath, LoginDataManager.EncodeLoginData(CurrentSession.LoginData));       
+            => File.WriteAllBytes(Settings.LoginDataPath, LoginDataManager.EncodeLoginData(CurrentSession.SessionLoginData));       
      
     }
 }

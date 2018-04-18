@@ -21,18 +21,18 @@ namespace PasswordManager.Engine.Crypto
             byte[] MasterKey = Encoding.UTF8.GetBytes(MasterKeyString);
             byte[] DerivedKey = DeriveMasterKey(MasterKeyString);
             byte[] Hash = SHA3512(MasterKey);
-            CurrentSession.LoginData.SetKeys(MasterKey, Hash, DerivedKey);
+            CurrentSession.SessionLoginData.SetKeys(MasterKey, Hash, DerivedKey);
         }
         public static byte[] DeriveMasterKey(string MasterKey)
         {
-            Rfc2898DeriveBytes pdb = new Rfc2898DeriveBytes(MasterKey, CurrentSession.LoginData.Salt, Settings.AESPBKDF2Iterations);
+            Rfc2898DeriveBytes pdb = new Rfc2898DeriveBytes(MasterKey, CurrentSession.SessionLoginData.Salt, Settings.AESPBKDF2Iterations);
             return pdb.GetBytes(Settings.DerivationSize);
         }
         /// <summary>
         /// Compare if the passwords match
         /// </summary>   
         public static bool CheckPassword(string MasterKeyCandidate) 
-            =>  SlowEquals(SHA3512(Encoding.UTF8.GetBytes(MasterKeyCandidate)), CurrentSession.LoginData.MasterHash);        
+            =>  SlowEquals(SHA3512(Encoding.UTF8.GetBytes(MasterKeyCandidate)), CurrentSession.SessionLoginData.MasterHash);        
                 
         /// <summary>
         /// Return the decoded login data

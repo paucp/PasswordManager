@@ -46,8 +46,7 @@
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.copyPasswordToClipboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.copyUsernameToClipboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ShowPasswordToClipboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.labelSearchIcon = new System.Windows.Forms.Label();
             this.panelSearchTextbox = new System.Windows.Forms.Panel();
@@ -243,11 +242,10 @@
             this.editToolStripMenuItem,
             this.deleteToolStripMenuItem,
             this.toolStripSeparator1,
-            this.copyPasswordToClipboardToolStripMenuItem,
-            this.copyUsernameToClipboardToolStripMenuItem});
+            this.ShowPasswordToClipboardToolStripMenuItem});
             this.materialContextMenuStrip1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialContextMenuStrip1.Name = "materialContextMenuStrip1";
-            this.materialContextMenuStrip1.Size = new System.Drawing.Size(274, 130);
+            this.materialContextMenuStrip1.Size = new System.Drawing.Size(274, 128);
             this.materialContextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.materialContextMenuStrip1_Opening);
             // 
             // addNewToolStripMenuItem
@@ -278,20 +276,13 @@
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(270, 6);
             // 
-            // copyPasswordToClipboardToolStripMenuItem
+            // ShowPasswordToClipboardToolStripMenuItem
             // 
-            this.copyPasswordToClipboardToolStripMenuItem.Font = new System.Drawing.Font("Roboto", 12F);
-            this.copyPasswordToClipboardToolStripMenuItem.Name = "copyPasswordToClipboardToolStripMenuItem";
-            this.copyPasswordToClipboardToolStripMenuItem.Size = new System.Drawing.Size(273, 24);
-            this.copyPasswordToClipboardToolStripMenuItem.Text = "Copy password to clipboard";
-            this.copyPasswordToClipboardToolStripMenuItem.Click += new System.EventHandler(this.copyPasswordToClipboardToolStripMenuItem_Click);
-            // 
-            // copyUsernameToClipboardToolStripMenuItem
-            // 
-            this.copyUsernameToClipboardToolStripMenuItem.Name = "copyUsernameToClipboardToolStripMenuItem";
-            this.copyUsernameToClipboardToolStripMenuItem.Size = new System.Drawing.Size(273, 24);
-            this.copyUsernameToClipboardToolStripMenuItem.Text = "Copy username to clipboard";
-            this.copyUsernameToClipboardToolStripMenuItem.Click += new System.EventHandler(this.copyUsernameToClipboardToolStripMenuItem_Click);
+            this.ShowPasswordToClipboardToolStripMenuItem.Font = new System.Drawing.Font("Roboto", 12F);
+            this.ShowPasswordToClipboardToolStripMenuItem.Name = "ShowPasswordToClipboardToolStripMenuItem";
+            this.ShowPasswordToClipboardToolStripMenuItem.Size = new System.Drawing.Size(273, 24);
+            this.ShowPasswordToClipboardToolStripMenuItem.Text = "Copy password to clipboard";
+            this.ShowPasswordToClipboardToolStripMenuItem.Click += new System.EventHandler(this.copyPasswordToClipboardToolStripMenuItem_Click);
             // 
             // textBoxSearch
             // 
@@ -381,9 +372,8 @@
         private MaterialSkin.Controls.MaterialContextMenuStrip materialContextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem addNewToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripMenuItem copyPasswordToClipboardToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ShowPasswordToClipboardToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem copyUsernameToClipboardToolStripMenuItem;
         private System.Windows.Forms.Button buttonEdit;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.TextBox textBoxSearch;

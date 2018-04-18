@@ -102,7 +102,7 @@ namespace PasswordManager
         private void buttonShow_Click(object sender, EventArgs e)
         {
             if (materialListView1.SelectedIndices.Count != 0)
-                new ShowPasswordForm().ShowPassword(EntryList[materialListView1.SelectedIndices[0]].Password);
+                new ShowPasswordForm().ShowPassword(EntryList[materialListView1.SelectedIndices[0]]);
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)

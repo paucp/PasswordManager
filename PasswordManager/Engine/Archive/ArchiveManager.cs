@@ -14,25 +14,25 @@ namespace PasswordManager.Engine.Archive
 
         public static void WriteEntries(List<EntryData> entries)
         {
-            IOManager.WriteArchive(entries);
             BackupSystem.BackupManager.GenerateBackup();
+            IOManager.WriteArchive(entries);            
             CMessageBox.ShowDialog(Messages.SuccessSaving);
         }
 
         public static List<EntryData> LoadEntries()
         {
             LoadedFlag = false;
-            IOManager.ProgressCompletedEvent += ProgressCompletedHandler;
+            IOManager.ProgressCompletedEvent += LoadingCompletedHandler;
             Task.Run(() => LoadedData = IOManager.ReadPasswords());
             while (!LoadedFlag)
-                Thread.Sleep(5);
+                Thread.Sleep(10);
             return LoadedData;
         }
 
-        private static void ProgressCompletedHandler()
+        private static void LoadingCompletedHandler()
         {
             LoadedFlag = true;
-            IOManager.ProgressCompletedEvent -= ProgressCompletedHandler;
+            IOManager.ProgressCompletedEvent -= LoadingCompletedHandler;
         }
 
         private static void HandleException(Exception ex)

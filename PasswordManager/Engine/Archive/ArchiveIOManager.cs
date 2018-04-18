@@ -67,9 +67,7 @@ namespace PasswordManager.Engine.Archive
             ArchiveReader Reader = new ArchiveReader(CryptoStream);
             List<EntryData> EntryList = new List<EntryData>();
             try
-            {
-                if (Math.Abs(Reader.EntryCount) > 1024 * 1024)
-                    new Exception("Max entries exceeded");
+            {                
                 for (int i = 0; i < Reader.EntryCount; i++)
                     EntryList.Add(Reader.ParseEntry());
             }

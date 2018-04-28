@@ -1,7 +1,7 @@
-﻿using System;
+﻿using PasswordManager.Engine.Passwords;
+using System;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using PasswordManager.Engine.Passwords;
 
 namespace PasswordManager
 {
@@ -13,7 +13,7 @@ namespace PasswordManager
         {
             SafePasswordChecker.LoadPasswords();
             InitializeComponent();
-            panel1.BackColor = Settings.ColorAccent;          
+            panel1.BackColor = Settings.ColorAccent;
         }
 
         private void buttonCancel_Click(object sender, EventArgs e) => Environment.Exit(0);

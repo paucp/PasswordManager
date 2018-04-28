@@ -6,10 +6,21 @@ namespace PasswordManager
     public partial class ShowPasswordForm : Form
     {
         private EntryData Entry;
+
         public ShowPasswordForm()
         {
             InitializeComponent();
+            this.Opacity = 0;
+            Animation.FadeIn(this);
         }
+
+        private int Max(int a, int b)
+        {
+            if (a > b) return a;
+            else if (a < b) return b;
+            else return b;
+        }
+
         public void ShowPassword(EntryData entry)
         {
             Entry = entry;
@@ -18,20 +29,29 @@ namespace PasswordManager
             labelURL.Text = Entry.Url;
             ShowDialog();
         }
-        private void buttonClose_Click(object sender, EventArgs e)        
+
+        private void buttonClose_Click(object sender, EventArgs e)
            => Close();
+
         private void SetClipboard(string s)
         {
             Clipboard.SetText(s);
             CMessageBox.ShowDialog(Messages.CopiedToClipboard);
         }
+
         private void buttonCopy_Click(object sender, EventArgs e)
             => SetClipboard(Entry.Password);
+
         private void linkLabelUser_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
             => SetClipboard(Entry.Username);
 
         private void linkLabelURL_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
             => SetClipboard(Entry.Url);
-       
+
+        private void ShowPasswordForm_Load(object sender, EventArgs e)
+        {
+            int MaxWidth = Max(Max(labelUser.Width, labelURL.Width), labelPassword.Width) + 180;
+            this.Width = MaxWidth;
+        }
     }
 }

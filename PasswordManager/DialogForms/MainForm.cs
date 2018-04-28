@@ -1,8 +1,8 @@
-﻿using System;
+﻿using PasswordManager.Engine.Archive;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
-using PasswordManager.Engine.Archive;
 
 namespace PasswordManager
 {
@@ -53,6 +53,9 @@ namespace PasswordManager
 
         private void Main_Load(object sender, EventArgs e) => LoadPasswords();
 
+        private void materialListView1_MouseDoubleClick(object sender, MouseEventArgs e)
+            => buttonShow_Click(sender, null);
+
         private void SaveChanges()
         {
             ArchiveManager.WriteEntries(EntryList);
@@ -82,10 +85,20 @@ namespace PasswordManager
             EntryForm NewPassword = new EntryForm();
             NewPassword.ShowDialog();
             if (!NewPassword.EntryCreatedOrEdited)
-                return;        
+                return;
             AddEntry(NewPassword.Entry);
             IsSaved = false;
             UpdateNameList();
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            if (materialListView1.SelectedItems.Count == 0 || !CMessageBox.ShowDialog(Messages.DeleteEntryCheck)) return;
+            int index = materialListView1.SelectedIndices[0];
+            EntryList.RemoveAt(index);
+            materialListView1.Items.RemoveAt(index);
+            UpdateNameList();
+            IsSaved = false;
         }
 
         private void buttonDeleteAll_Click(object sender, EventArgs e)
@@ -97,22 +110,6 @@ namespace PasswordManager
                 UpdateNameList();
                 IsSaved = false;
             }
-        }
-
-        private void buttonShow_Click(object sender, EventArgs e)
-        {
-            if (materialListView1.SelectedIndices.Count != 0)
-                new ShowPasswordForm().ShowPassword(EntryList[materialListView1.SelectedIndices[0]]);
-        }
-
-        private void buttonDelete_Click(object sender, EventArgs e)
-        {
-            if (materialListView1.SelectedItems.Count == 0 || !CMessageBox.ShowDialog(Messages.DeleteEntryCheck)) return;          
-            int index = materialListView1.SelectedIndices[0];
-            EntryList.RemoveAt(index);
-            materialListView1.Items.RemoveAt(index);
-            UpdateNameList();
-            IsSaved = false;
         }
 
         private void buttonEdit_Click(object sender, EventArgs e)
@@ -131,9 +128,14 @@ namespace PasswordManager
 
         private void buttonSave_Click(object sender, EventArgs e) => SaveChanges();
 
+        private void buttonShow_Click(object sender, EventArgs e)
+        {
+            if (materialListView1.SelectedIndices.Count != 0)
+                new ShowPasswordForm().ShowPassword(EntryList[materialListView1.SelectedIndices[0]]);
+        }
+
         private void Main_FormClosing(object sender, FormClosingEventArgs e)
         => e.Cancel = (!IsSaved && !CMessageBox.ShowDialog(Messages.ChangesCheck));
-
 
         private void materialListView1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -168,7 +170,7 @@ namespace PasswordManager
         {
             bool enable = materialListView1.SelectedItems.Count != 0;
             deleteToolStripMenuItem.Enabled = enable;
-            ShowPasswordToClipboardToolStripMenuItem.Enabled = enable;           
+            ShowPasswordToClipboardToolStripMenuItem.Enabled = enable;
             editToolStripMenuItem.Enabled = enable;
         }
 
@@ -177,7 +179,7 @@ namespace PasswordManager
         #region Search
 
         public void ReleaseSearchBoxFocus()
-        {            
+        {
             panelSearchTextbox.Height = 1;
             panelSearchTextbox.BackColor = Color.Gainsboro;
         }
@@ -187,6 +189,12 @@ namespace PasswordManager
             textBoxSearch.Text = "";
             panelSearchTextbox.Height = 2;
             panelSearchTextbox.BackColor = Settings.SearchBoxFocusColor;
+        }
+
+        private void materialListView1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter && SearchMan.CanSearchLastString)
+                SelectItem(SearchMan.SearchIndexWithLastString());
         }
 
         private void SelectItem(int Index)
@@ -201,28 +209,18 @@ namespace PasswordManager
             }
         }
 
+        private void textBoxSearch_Enter(object sender, EventArgs e)
+        => SetSearchBoxFocus();
+
         private void textBoxSearch_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode != Keys.Enter || textBoxSearch.Text == "") return;
             SelectItem(SearchMan.SearchIndex(textBoxSearch.Text));
         }
 
-        private void materialListView1_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter && SearchMan.CanSearchLastString)
-                SelectItem(SearchMan.SearchIndexWithLastString());
-        }
-
-        private void textBoxSearch_Enter(object sender, EventArgs e)
-        => SetSearchBoxFocus();
-
         private void textBoxSearch_Leave(object sender, EventArgs e)
         => ReleaseSearchBoxFocus();
 
         #endregion Search
-
-        private void materialListView1_MouseDoubleClick(object sender, MouseEventArgs e)        
-            => buttonShow_Click(sender, null);
-        
     }
 }

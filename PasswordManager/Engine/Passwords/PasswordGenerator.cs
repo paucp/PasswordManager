@@ -17,8 +17,8 @@ namespace PasswordManager.Engine.Passwords
             return sb.ToString();
         }
 
-        private static char GetRandomChar()               
-           => Charmap[RNG.Next(0, Charmap.Length)];       
+        private static char GetRandomChar()
+           => Charmap[RNG.Next(0, Charmap.Length)];
 
         private static char[] LoadChars()
             => File.ReadAllText(Settings.Charmap).ToCharArray();

@@ -51,6 +51,7 @@
             // 
             // buttonClose
             // 
+            this.buttonClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonClose.BackColor = System.Drawing.Color.Gainsboro;
             this.buttonClose.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.buttonClose.FlatAppearance.BorderSize = 0;
@@ -69,6 +70,7 @@
             // 
             // buttonCopy
             // 
+            this.buttonCopy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonCopy.BackColor = System.Drawing.Color.Gainsboro;
             this.buttonCopy.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.buttonCopy.FlatAppearance.BorderSize = 0;
@@ -115,6 +117,7 @@
             // 
             // linkLabelUser
             // 
+            this.linkLabelUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.linkLabelUser.AutoSize = true;
             this.linkLabelUser.Location = new System.Drawing.Point(239, 54);
             this.linkLabelUser.Name = "linkLabelUser";
@@ -126,6 +129,7 @@
             // 
             // linkLabelURL
             // 
+            this.linkLabelURL.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.linkLabelURL.AutoSize = true;
             this.linkLabelURL.Location = new System.Drawing.Point(239, 82);
             this.linkLabelURL.Name = "linkLabelURL";
@@ -176,6 +180,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ShowPasswordForm";
+            this.Load += new System.EventHandler(this.ShowPasswordForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

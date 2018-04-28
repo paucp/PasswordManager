@@ -8,23 +8,43 @@ namespace Test
 {
     internal class Program
     {
+        public static short[] Initialize(int length, short value)
+        {
+            short[] output = new short[length];
+            for (int i = 0; i < length; ++i)
+                output[i] = value;
+            return output;
+        }
+
+        public static byte[] ToByte(short[] input)
+        {
+            byte[] output = new byte[input.Length];
+            for (int i = 0; i < input.Length; ++i)
+                output[i] = (byte)input[i];
+            return output;
+        }
+
         public static byte[] MixBytes2(byte[] input, int seed)
         {
             Random RNG = new Random(seed);
-            short[] output = new short[input.Length];
+            short[] output = Initialize(input.Length, -1);
             bool[] cellMap = new bool[input.Length];
             for (int i = 0; i < input.Length; i++)
             {
-                int Index; 
-                while(output )
+                int Index;
+                bool Done = true;
+                while (Done)
+                {
+                }
             }
-            return output;
+            return ToByte(output);
         }
+
         public static byte[] MixBytes(byte[] input, int seed)
         {
             Random RNG = new Random(seed);
             byte[] output = new byte[input.Length];
-            bool[] cellMap = new bool[input.Length];        
+            bool[] cellMap = new bool[input.Length];
             for (int i = 0; i < input.Length; i++)
                 output[GenerateIndex(cellMap, RNG)] = input[i];
             return output;
@@ -33,19 +53,20 @@ namespace Test
         public static byte[] InverseMixBytes(byte[] input, int seed)
         {
             Random RNG = new Random(seed);
-            int[] row = GenerateRow(input.Length, RNG);            
+            int[] row = GenerateRow(input.Length, RNG);
             byte[] output = new byte[input.Length];
             for (int i = 0; i < input.Length; i++)
                 output[i] = (input[row[i]]);
             return output;
         }
+
         private static int[] GenerateRow(int count, Random RNG)
         {
             HashSet<int> randomNumbers = new HashSet<int>();
             for (int i = 0; i < count; i++)
                 while (!randomNumbers.Add(RNG.Next(count))) ;
             return randomNumbers.ToArray();
-        } 
+        }
 
         private static int GenerateIndex(bool[] cellMap, Random RNG)
         {
@@ -76,19 +97,19 @@ namespace Test
             tests = Convert.ToInt32(Console.ReadLine());
             sw.Start();
             for (int i = 0; i < tests; i++)
-            {              
-                string str = GenerateGUID();            
-                byte[] buffer = Encoding.UTF8.GetBytes(str);                
-                byte[] mixed = MixBytes(buffer, 0);             
-                byte[] unmixed = InverseMixBytes(mixed, 0);           
+            {
+                string str = GenerateGUID();
+                byte[] buffer = Encoding.UTF8.GetBytes(str);
+                byte[] mixed = MixBytes(buffer, 0);
+                byte[] unmixed = InverseMixBytes(mixed, 0);
                 //Console.ForegroundColor = ConsoleColor.DarkGray;
-                //Console.WriteLine("MIXED:   " + Encoding.UTF8.GetString(mixed));              
+                //Console.WriteLine("MIXED:   " + Encoding.UTF8.GetString(mixed));
                 bool result = ByteEquals(buffer, unmixed);
                 //if (result)
-                  //  Console.ForegroundColor = ConsoleColor.Green;
+                //  Console.ForegroundColor = ConsoleColor.Green;
                 //else Console.ForegroundColor = ConsoleColor.Red;
                 //Console.WriteLine("UNMIXED: " + Encoding.UTF8.GetString(unmixed));
-               // Console.ForegroundColor = ConsoleColor.Gray;
+                // Console.ForegroundColor = ConsoleColor.Gray;
                 int sim = CalcSimilarity(mixed, unmixed);
                 similarity += sim;
                 //Console.WriteLine("SIMILARITY: " + sim);
@@ -123,7 +144,7 @@ namespace Test
         private static string GenerateGUID()
         {
             StringBuilder strb = new StringBuilder();
-            strb.Append(Guid.NewGuid().ToString()+ Guid.NewGuid().ToString()+ Guid.NewGuid().ToString()+ Guid.NewGuid().ToString()+ Guid.NewGuid().ToString()+ Guid.NewGuid().ToString()+ Guid.NewGuid().ToString());
+            strb.Append(Guid.NewGuid().ToString() + Guid.NewGuid().ToString() + Guid.NewGuid().ToString() + Guid.NewGuid().ToString() + Guid.NewGuid().ToString() + Guid.NewGuid().ToString() + Guid.NewGuid().ToString());
             return strb.ToString().Substring(0, baseRNG.Next(strb.Length / 4, strb.Length));
         }
     }

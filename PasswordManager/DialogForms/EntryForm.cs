@@ -1,13 +1,13 @@
-﻿using System;
+﻿using PasswordManager.Engine.Passwords;
+using System;
 using System.Windows.Forms;
-using PasswordManager.Engine.Passwords;
 
 namespace PasswordManager
 {
     public partial class EntryForm : Form
     {
-        public bool EntryCreatedOrEdited = false;
         public EntryData Entry;
+        public bool EntryCreatedOrEdited = false;
 
         public EntryForm()
         {
@@ -27,12 +27,19 @@ namespace PasswordManager
             textBoxURL.Text = data.Url;
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string Password = PasswordGenerator.GeneratePassword((int)numericUpDown1.Value);
+            textBoxPassword.Text = Password;
+            textBoxPWRepeat.Text = Password;
+        }
+
         private void buttonAccept_Click(object sender, EventArgs e)
         {
-            if (textBoxPassword.Text == "" || textBoxName.Text == "" || textBoxPWRepeat.Text == "")            
-                CMessageBox.ShowDialog(Messages.EmptyTextBox);                            
-            else if (textBoxPassword.Text != textBoxPWRepeat.Text)            
-                CMessageBox.ShowDialog(Messages.PasswordDontMatch);               
+            if (textBoxPassword.Text == "" || textBoxName.Text == "" || textBoxPWRepeat.Text == "")
+                CMessageBox.ShowDialog(Messages.EmptyTextBox);
+            else if (textBoxPassword.Text != textBoxPWRepeat.Text)
+                CMessageBox.ShowDialog(Messages.PasswordDontMatch);
             else
             {
                 Entry.Name = textBoxName.Text;
@@ -46,13 +53,6 @@ namespace PasswordManager
         }
 
         private void buttonCancel_Click(object sender, EventArgs e) => Close();
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            string Password = PasswordGenerator.GeneratePassword((int)numericUpDown1.Value);
-            textBoxPassword.Text = Password;
-            textBoxPWRepeat.Text = Password;
-        }
 
         private void checkBoxShowPasswords_CheckedChanged(object sender, EventArgs e)
         {

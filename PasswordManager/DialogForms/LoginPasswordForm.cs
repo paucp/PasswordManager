@@ -6,35 +6,20 @@ namespace PasswordManager
 {
     public partial class CheckPasswordForm : Form
     {
-        public bool LoggedIn { get; set; }
-
         public CheckPasswordForm()
-        {           
+        {
             InitializeComponent();
             Opacity = 0;
             panel1.BackColor = Settings.ColorAccent;
             LoggedIn = false;
         }
 
-        private void CheckPasswordForm_Shown(object sender, EventArgs e)
-            => Animation.FadeIn(this);
+        public bool LoggedIn { get; set; }
 
-        private void LockUI(bool flag)
+        private void buttonCleanup_Click(object sender, EventArgs e)
         {
-            Invoke((MethodInvoker)delegate
-            {
-                foreach (Control c in this.Controls)
-                    c.Enabled = flag;
-            });
-        }
-
-        private void ShowErrorMessage()
-        {
-            Invoke((MethodInvoker)delegate
-            {
-                CMessageBox.ShowDialog(Messages.WrongPassword);
-                label1.Text = "Password:";
-            });
+            if (CMessageBox.ShowDialog(Messages.CleanupCheck))
+                UserDataIOManager.DeleteAllUserData();
         }
 
         private void buttonLogin_Click(object sender, EventArgs e)
@@ -43,6 +28,9 @@ namespace PasswordManager
             new Task(() => CheckPassword(textBoxPassword.Text)).Start();
             label1.Text = "Password: Checking . . .";
         }
+
+        private void buttonRestore_Click(object sender, EventArgs e)
+                => BackupSystem.BackupManager.RestoreData();
 
         private void CheckPassword(string Password)
         {
@@ -61,14 +49,27 @@ namespace PasswordManager
                     Dispose();
                 });
             }
-        }    
-        private void buttonCleanup_Click(object sender, EventArgs e)
-        {
-            if (CMessageBox.ShowDialog(Messages.CleanupCheck))
-                UserDataIOManager.DeleteAllUserData();     
         }
-        private void buttonRestore_Click(object sender, EventArgs e)
-                => BackupSystem.BackupManager.RestoreData();
-       
+
+        private void CheckPasswordForm_Shown(object sender, EventArgs e)
+                                            => Animation.FadeIn(this);
+
+        private void LockUI(bool flag)
+        {
+            Invoke((MethodInvoker)delegate
+            {
+                foreach (Control c in this.Controls)
+                    c.Enabled = flag;
+            });
+        }
+
+        private void ShowErrorMessage()
+        {
+            Invoke((MethodInvoker)delegate
+            {
+                CMessageBox.ShowDialog(Messages.WrongPassword);
+                label1.Text = "Password:";
+            });
+        }
     }
 }

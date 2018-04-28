@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.IO;
 
 namespace PasswordManager.Engine.Archive
-{   
-
+{
     public class ArchiveIOManager
     {
         public delegate void ProgressCompleted();
+
         public delegate void ExceptionThrown(Exception ex);
 
         public ProgressCompleted ProgressCompletedEvent;
@@ -67,7 +67,7 @@ namespace PasswordManager.Engine.Archive
             ArchiveReader Reader = new ArchiveReader(CryptoStream);
             List<EntryData> EntryList = new List<EntryData>();
             try
-            {                
+            {
                 for (int i = 0; i < Reader.EntryCount; i++)
                     EntryList.Add(Reader.ParseEntry());
             }

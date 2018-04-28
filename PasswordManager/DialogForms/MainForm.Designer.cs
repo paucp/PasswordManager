@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.buttonShow = new System.Windows.Forms.Button();
             this.buttonSave = new System.Windows.Forms.Button();
@@ -50,29 +48,8 @@
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.labelSearchIcon = new System.Windows.Forms.Label();
             this.panelSearchTextbox = new System.Windows.Forms.Panel();
-            this.panel1.SuspendLayout();
             this.materialContextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Black;
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(-1, -1);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(723, 52);
-            this.panel1.TabIndex = 12;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(13, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(227, 29);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "PasswordManager r";
             // 
             // buttonAdd
             // 
@@ -245,21 +222,21 @@
             this.ShowPasswordToClipboardToolStripMenuItem});
             this.materialContextMenuStrip1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialContextMenuStrip1.Name = "materialContextMenuStrip1";
-            this.materialContextMenuStrip1.Size = new System.Drawing.Size(274, 128);
+            this.materialContextMenuStrip1.Size = new System.Drawing.Size(190, 106);
             this.materialContextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.materialContextMenuStrip1_Opening);
             // 
             // addNewToolStripMenuItem
             // 
             this.addNewToolStripMenuItem.Font = new System.Drawing.Font("Roboto", 12F);
             this.addNewToolStripMenuItem.Name = "addNewToolStripMenuItem";
-            this.addNewToolStripMenuItem.Size = new System.Drawing.Size(273, 24);
+            this.addNewToolStripMenuItem.Size = new System.Drawing.Size(189, 24);
             this.addNewToolStripMenuItem.Text = "New entry";
             this.addNewToolStripMenuItem.Click += new System.EventHandler(this.addNewToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(273, 24);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(189, 24);
             this.editToolStripMenuItem.Text = "Edit";
             this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
             // 
@@ -267,21 +244,21 @@
             // 
             this.deleteToolStripMenuItem.Font = new System.Drawing.Font("Roboto", 12F);
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(273, 24);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(189, 24);
             this.deleteToolStripMenuItem.Text = "Delete";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(270, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(186, 6);
             // 
             // ShowPasswordToClipboardToolStripMenuItem
             // 
             this.ShowPasswordToClipboardToolStripMenuItem.Font = new System.Drawing.Font("Roboto", 12F);
             this.ShowPasswordToClipboardToolStripMenuItem.Name = "ShowPasswordToClipboardToolStripMenuItem";
-            this.ShowPasswordToClipboardToolStripMenuItem.Size = new System.Drawing.Size(273, 24);
-            this.ShowPasswordToClipboardToolStripMenuItem.Text = "Copy password to clipboard";
+            this.ShowPasswordToClipboardToolStripMenuItem.Size = new System.Drawing.Size(189, 24);
+            this.ShowPasswordToClipboardToolStripMenuItem.Text = "Show Password";
             this.ShowPasswordToClipboardToolStripMenuItem.Click += new System.EventHandler(this.copyPasswordToClipboardToolStripMenuItem_Click);
             // 
             // textBoxSearch
@@ -332,7 +309,6 @@
             this.Controls.Add(this.buttonEdit);
             this.Controls.Add(this.materialListView1);
             this.Controls.Add(this.buttonDeleteAll);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.buttonShow);
             this.Controls.Add(this.buttonSave);
@@ -347,8 +323,6 @@
             this.Text = "PasswordManager";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_FormClosing);
             this.Load += new System.EventHandler(this.Main_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.materialContextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -356,8 +330,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.Button buttonShow;
         private System.Windows.Forms.Button buttonSave;
@@ -368,7 +340,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.Label label1;
         private MaterialSkin.Controls.MaterialContextMenuStrip materialContextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem addNewToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;

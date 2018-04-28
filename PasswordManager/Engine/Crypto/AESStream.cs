@@ -7,12 +7,13 @@ namespace PasswordManager.Engine.Crypto
     {
         /// <summary>
         /// Crate a AES encryption stream based on current session data
-        /// </summary>     
+        /// </summary>
         public static CryptoStream CtrEncryptionStreamCurrentSession(Stream BaseStream)
             => CreateEncryptionStream(BaseStream);
+
         /// <summary>
         /// Crate a AES decryption stream based on current session data
-        /// </summary>     
+        /// </summary>
         public static CryptoStream CtrDecryptionStreamCurrentSession(Stream BaseStream)
              => CreateDecryptionStream(BaseStream);
 
@@ -21,15 +22,15 @@ namespace PasswordManager.Engine.Crypto
 
         private static CryptoStream CreateDecryptionStream(Stream BaseStream)
             => new CryptoStream(BaseStream, CreateAES().CreateDecryptor(), CryptoStreamMode.Read);
-     
+
         private static RijndaelManaged CreateAES()
         {
-            RijndaelManaged AES = new RijndaelManaged();         
+            RijndaelManaged AES = new RijndaelManaged();
             AES.KeySize = Settings.AESKeySize;
             AES.BlockSize = Settings.AESBlockSize;
             AES.Key = CurrentSession.SessionLoginData.DerivedMasterkey;
             AES.IV = CurrentSession.SessionLoginData.IV;
-            AES.Mode = CipherMode.CBC;           
+            AES.Mode = CipherMode.CBC;
             return AES;
         }
     }

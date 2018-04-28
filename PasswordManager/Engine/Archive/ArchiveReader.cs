@@ -29,7 +29,7 @@ namespace PasswordManager.Engine.Archive
 
         private string ReadString()
             => Encoding.UTF8.GetString(ReadBuffer(ReadHeader()));
-    
+
         private int ReadHeader() => BitConverter.ToInt32(ReadBuffer(4), 0);
 
         private byte[] ReadBuffer(int size)

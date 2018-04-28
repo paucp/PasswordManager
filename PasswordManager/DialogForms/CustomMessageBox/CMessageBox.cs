@@ -11,8 +11,9 @@ namespace PasswordManager
     }
 
     public partial class CMessageBox : Form
-    {        
+    {
         public static bool ShowDialog(Message Message) => ShowDialog(Message.Text, Message.Title, Message.CancelButton);
+
         public static bool ShowDialog(string Text, string Title = null, bool ShowCancelButton = false)
          => new CMessageBox().ShowCDialog(Text, Title, ShowCancelButton) == CMEssageBoxResult.Accept;
 

@@ -8,14 +8,15 @@ namespace PasswordManager.Engine.Passwords
     {
         private static List<string> passwordList = new List<string>();
 
-        public static void LoadPasswords()        
-            => passwordList.AddRange(File.ReadAllLines((Settings.PasswordListFilePath)));                   
+        public static void LoadPasswords()
+            => passwordList.AddRange(File.ReadAllLines((Settings.PasswordListFilePath)));
 
         public static void ReleasePasswords()
         {
             passwordList.Clear();
             GC.Collect();
         }
+
         public static bool IsUsedPassword(string password)
              => passwordList.Contains(password);
     }

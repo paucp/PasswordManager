@@ -12,6 +12,15 @@
         public byte[] Salt { get; }
         public byte[] IV { get; }
 
+        public LoginData(byte[] saltbytes, byte[] ivbytes)
+        {
+            derivedKey = null;
+            masterKey = null;
+            masterHash = null;
+            Salt = saltbytes;
+            IV = ivbytes;
+        }
+
         public LoginData(byte[] masterhash, byte[] saltbytes, byte[] ivbytes)
         {
             derivedKey = null;
@@ -20,6 +29,7 @@
             Salt = saltbytes;
             IV = ivbytes;
         }
+
         public LoginData(byte[] masterkey, byte[] masterhash, byte[] derivedkey, byte[] saltbytes, byte[] ivbytes)
         {
             derivedKey = derivedkey;
@@ -28,11 +38,12 @@
             Salt = saltbytes;
             IV = ivbytes;
         }
+
         public void SetKeys(byte[] Master, byte[] Hash, byte[] Derived)
         {
             masterKey = Master;
             masterHash = Hash;
-            derivedKey = Derived;           
-        }     
+            derivedKey = Derived;
+        }
     }
 }

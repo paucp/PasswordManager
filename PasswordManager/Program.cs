@@ -7,7 +7,7 @@ namespace PasswordManager
     {
         [STAThread]
         private static void Main()
-        {          
+        {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             if (!UserDataIOManager.LoginDataFileExists)

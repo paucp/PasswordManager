@@ -15,7 +15,7 @@ namespace PasswordManager.Engine.Archive
         public static void WriteEntries(List<EntryData> entries)
         {
             BackupSystem.BackupManager.GenerateNewBackup();
-            IOManager.WriteArchive(entries);            
+            IOManager.WriteArchive(entries);
             CMessageBox.ShowDialog(Messages.SuccessSaving);
         }
 
@@ -40,7 +40,7 @@ namespace PasswordManager.Engine.Archive
             CMessageBox.ShowDialog(ex.Message, "Critical Error");
             CMessageBox.ShowDialog(Messages.CorruptedData);
             IOManager.ExceptionThrownEvent -= HandleException;
-            Application.Restart();   
+            Application.Restart();
         }
     }
 }

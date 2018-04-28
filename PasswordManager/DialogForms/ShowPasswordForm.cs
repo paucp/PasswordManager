@@ -9,7 +9,9 @@ namespace PasswordManager
 
         public ShowPasswordForm()
         {
+            
             InitializeComponent();
+            panel1.BackColor = Settings.ColorAccent;
             this.Opacity = 0;
             Animation.FadeIn(this);
         }
@@ -35,8 +37,11 @@ namespace PasswordManager
 
         private void SetClipboard(string s)
         {
-            Clipboard.SetText(s);
-            CMessageBox.ShowDialog(Messages.CopiedToClipboard);
+            if (!string.IsNullOrEmpty(s))
+            {
+                Clipboard.SetText(s);
+                CMessageBox.ShowDialog(Messages.CopiedToClipboard);
+            }
         }
 
         private void buttonCopy_Click(object sender, EventArgs e)

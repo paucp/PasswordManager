@@ -13,8 +13,7 @@ namespace PasswordManager.Engine.Archive
         private static bool LoadedFlag;
 
         public static void WriteEntries(List<EntryData> entries)
-        {
-            BackupSystem.BackupManager.GenerateNewBackup();
+        {           
             IOManager.WriteArchive(entries);
             CMessageBox.ShowDialog(Messages.SuccessSaving);
         }

@@ -48,7 +48,10 @@
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.labelSearchIcon = new System.Windows.Forms.Label();
             this.panelSearchTextbox = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.materialContextMenuStrip1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonAdd
@@ -268,7 +271,7 @@
             this.textBoxSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxSearch.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxSearch.ForeColor = System.Drawing.Color.DimGray;
-            this.textBoxSearch.Location = new System.Drawing.Point(40, 62);
+            this.textBoxSearch.Location = new System.Drawing.Point(40, 66);
             this.textBoxSearch.Name = "textBoxSearch";
             this.textBoxSearch.Size = new System.Drawing.Size(666, 20);
             this.textBoxSearch.TabIndex = 23;
@@ -282,7 +285,7 @@
             this.labelSearchIcon.AutoSize = true;
             this.labelSearchIcon.Font = new System.Drawing.Font("Segoe UI Symbol", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelSearchIcon.ForeColor = System.Drawing.Color.Gray;
-            this.labelSearchIcon.Location = new System.Drawing.Point(7, 62);
+            this.labelSearchIcon.Location = new System.Drawing.Point(7, 66);
             this.labelSearchIcon.Name = "labelSearchIcon";
             this.labelSearchIcon.Size = new System.Drawing.Size(21, 25);
             this.labelSearchIcon.TabIndex = 27;
@@ -291,11 +294,32 @@
             // panelSearchTextbox
             // 
             this.panelSearchTextbox.BackColor = System.Drawing.Color.Gainsboro;
-            this.panelSearchTextbox.Location = new System.Drawing.Point(40, 89);
+            this.panelSearchTextbox.Location = new System.Drawing.Point(40, 93);
             this.panelSearchTextbox.Name = "panelSearchTextbox";
             this.panelSearchTextbox.Size = new System.Drawing.Size(666, 1);
             this.panelSearchTextbox.TabIndex = 25;
             this.panelSearchTextbox.TabStop = true;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Black;
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Location = new System.Drawing.Point(-6, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(736, 59);
+            this.panel1.TabIndex = 28;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Roboto Light", 20F);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(18, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(260, 33);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Password Manager r";
             // 
             // MainForm
             // 
@@ -303,6 +327,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(722, 466);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelSearchTextbox);
             this.Controls.Add(this.labelSearchIcon);
             this.Controls.Add(this.textBoxSearch);
@@ -324,6 +349,8 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_FormClosing);
             this.Load += new System.EventHandler(this.Main_Load);
             this.materialContextMenuStrip1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -350,6 +377,8 @@
         private System.Windows.Forms.TextBox textBoxSearch;
         private System.Windows.Forms.Label labelSearchIcon;
         private System.Windows.Forms.Panel panelSearchTextbox;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label1;
     }
 }
 

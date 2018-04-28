@@ -27,10 +27,7 @@ namespace PasswordManager
             if (textBoxPassword.Text == "") return;
             new Task(() => CheckPassword(textBoxPassword.Text)).Start();
             label1.Text = "Password: Checking . . .";
-        }
-
-        private void buttonRestore_Click(object sender, EventArgs e)
-                => BackupSystem.BackupManager.RestoreData();
+        }  
 
         private void CheckPassword(string Password)
         {

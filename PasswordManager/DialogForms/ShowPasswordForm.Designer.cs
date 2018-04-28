@@ -38,6 +38,7 @@
             this.linkLabelURL = new System.Windows.Forms.LinkLabel();
             this.labelUser = new System.Windows.Forms.Label();
             this.labelURL = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // label1
@@ -45,7 +46,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 17);
+            this.label1.Size = new System.Drawing.Size(67, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "Password:";
             // 
@@ -102,7 +103,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(12, 54);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 17);
+            this.label2.Size = new System.Drawing.Size(36, 15);
             this.label2.TabIndex = 35;
             this.label2.Text = "User:";
             // 
@@ -111,7 +112,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(12, 82);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(26, 17);
+            this.label3.Size = new System.Drawing.Size(25, 15);
             this.label3.TabIndex = 36;
             this.label3.Text = "Url:";
             // 
@@ -121,7 +122,7 @@
             this.linkLabelUser.AutoSize = true;
             this.linkLabelUser.Location = new System.Drawing.Point(239, 54);
             this.linkLabelUser.Name = "linkLabelUser";
-            this.linkLabelUser.Size = new System.Drawing.Size(36, 17);
+            this.linkLabelUser.Size = new System.Drawing.Size(35, 15);
             this.linkLabelUser.TabIndex = 37;
             this.linkLabelUser.TabStop = true;
             this.linkLabelUser.Text = "Copy";
@@ -133,7 +134,7 @@
             this.linkLabelURL.AutoSize = true;
             this.linkLabelURL.Location = new System.Drawing.Point(239, 82);
             this.linkLabelURL.Name = "linkLabelURL";
-            this.linkLabelURL.Size = new System.Drawing.Size(36, 17);
+            this.linkLabelURL.Size = new System.Drawing.Size(35, 15);
             this.linkLabelURL.TabIndex = 38;
             this.linkLabelURL.TabStop = true;
             this.linkLabelURL.Text = "Copy";
@@ -144,7 +145,7 @@
             this.labelUser.AutoSize = true;
             this.labelUser.Location = new System.Drawing.Point(86, 54);
             this.labelUser.Name = "labelUser";
-            this.labelUser.Size = new System.Drawing.Size(33, 17);
+            this.labelUser.Size = new System.Drawing.Size(32, 15);
             this.labelUser.TabIndex = 39;
             this.labelUser.Text = "user";
             // 
@@ -153,9 +154,17 @@
             this.labelURL.AutoSize = true;
             this.labelURL.Location = new System.Drawing.Point(86, 82);
             this.labelURL.Name = "labelURL";
-            this.labelURL.Size = new System.Drawing.Size(31, 17);
+            this.labelURL.Size = new System.Drawing.Size(30, 15);
             this.labelURL.TabIndex = 40;
             this.labelURL.Text = "URL";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Black;
+            this.panel1.Location = new System.Drawing.Point(-1, -2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(300, 25);
+            this.panel1.TabIndex = 41;
             // 
             // ShowPasswordForm
             // 
@@ -163,6 +172,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(287, 163);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.linkLabelURL);
             this.Controls.Add(this.linkLabelUser);
             this.Controls.Add(this.labelURL);
@@ -198,5 +208,6 @@
         private System.Windows.Forms.LinkLabel linkLabelURL;
         private System.Windows.Forms.Label labelUser;
         private System.Windows.Forms.Label labelURL;
+        private System.Windows.Forms.Panel panel1;
     }
 }

@@ -9,8 +9,7 @@ namespace PasswordManager
         public static bool LoginDataFileExists => File.Exists(Settings.LoginDataPath);
 
         public static void DeleteAllUserData()
-        {
-            File.Delete(Settings.ArchiveBackupPath);
+        {          
             File.Delete(Settings.ArchivePath);
             File.Delete(Settings.LoginDataPath);
             Environment.Exit(0);

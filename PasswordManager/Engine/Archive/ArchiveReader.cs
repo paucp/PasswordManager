@@ -1,6 +1,4 @@
-﻿using System;
-using System.IO;
-using System.Text;
+﻿using System.IO;
 
 namespace PasswordManager.Engine.Archive
 {
@@ -8,48 +6,25 @@ namespace PasswordManager.Engine.Archive
     {
         private int entryCount;
         public int EntryCount => entryCount;
-        private Stream InputStream;
+        private EncodingStream InputStream;
 
         public ArchiveReader(Stream _inputStream)
         {
-            InputStream = _inputStream;
-            entryCount = ReadHeader();
+            InputStream = new EncodingStream(_inputStream);
+            entryCount = InputStream.ReadHeader();
         }
 
         public EntryData ParseEntry()
         {
             EntryData ReadEntry = new EntryData();
-            ReadEntry.Name = ReadString();
-            ReadEntry.Username = ReadString();
-            ReadEntry.Comment = ReadString();
-            ReadEntry.Url = ReadString();
-            ReadEntry.Password = ReadString();
+            ReadEntry.Name = InputStream.ReadNextString();
+            ReadEntry.Username = InputStream.ReadNextString();
+            ReadEntry.Comment = InputStream.ReadNextString();
+            ReadEntry.Url = InputStream.ReadNextString();
+            ReadEntry.Password = InputStream.ReadNextString();
             return ReadEntry;
         }
 
-        private string ReadString()
-            => Encoding.UTF8.GetString(ReadBuffer(ReadHeader()));
-
-        private int ReadHeader() => BitConverter.ToInt32(ReadBuffer(4), 0);
-
-        private byte[] ReadBuffer(int size)
-        {
-            byte[] buffer = new byte[size];
-            InputStream.Read(buffer, 0, size);
-            return buffer;
-        }
-
-        public bool TryClose()
-        {
-            try
-            {
-                InputStream.Close();
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
-        }
+        public bool TryClose() => InputStream.TryClose();
     }
 }

@@ -9,10 +9,10 @@ namespace PasswordManager
 
         public ShowPasswordForm()
         {
-            
             InitializeComponent();
             panel1.BackColor = Settings.ColorAccent;
             this.Opacity = 0;
+
             Animation.FadeIn(this);
         }
 
@@ -29,6 +29,8 @@ namespace PasswordManager
             labelPassword.Text = Entry.Password;
             labelUser.Text = Entry.Username;
             labelURL.Text = Entry.Url;
+            int MaxWidth = Max(Max(labelUser.Width, labelURL.Width), labelPassword.Width) + 180;
+            this.Width = MaxWidth;
             ShowDialog();
         }
 
@@ -55,8 +57,6 @@ namespace PasswordManager
 
         private void ShowPasswordForm_Load(object sender, EventArgs e)
         {
-            int MaxWidth = Max(Max(labelUser.Width, labelURL.Width), labelPassword.Width) + 180;
-            this.Width = MaxWidth;
         }
     }
 }

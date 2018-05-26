@@ -36,7 +36,7 @@ namespace PasswordManager.Engine.Crypto
             return ec.GetData();
         }
 
-        public static LoginData GenerateNewLoginData()
+        public static LoginData GenerateCryptoRNGLoginData()
         {
             RNGCryptoServiceProvider CSP = new RNGCryptoServiceProvider();
             byte[] Salt = new byte[Settings.SaltSize];

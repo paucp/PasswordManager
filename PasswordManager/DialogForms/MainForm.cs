@@ -1,4 +1,5 @@
 ﻿using PasswordManager.Engine.Archive;
+using PasswordManager.Engine.Crypto;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -57,7 +58,7 @@ namespace PasswordManager
             => buttonShow_Click(sender, null);
 
         private void SaveChanges()
-        {
+        {            
             ArchiveManager.WriteEntries(EntryList);
             IsSaved = true;
         }

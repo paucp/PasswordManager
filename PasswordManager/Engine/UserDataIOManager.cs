@@ -9,7 +9,7 @@ namespace PasswordManager
         public static bool LoginDataFileExists => File.Exists(Settings.LoginDataPath);
 
         public static void DeleteAllUserData()
-        {          
+        {
             File.Delete(Settings.ArchivePath);
             File.Delete(Settings.LoginDataPath);
             Environment.Exit(0);
@@ -17,7 +17,7 @@ namespace PasswordManager
 
         public static void GenerateNewSessionAndSave(string MasterKey)
         {
-            CurrentSession.SetLoginData(LoginDataManager.GenerateNewLoginData());
+            CurrentSession.SetLoginData(LoginDataManager.GenerateCryptoRNGLoginData());
             SetSessionKey(MasterKey);
             SaveCurrentSessionLoginData();
         }

@@ -49,11 +49,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Roboto", 14F);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(14, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 24);
+            this.label1.Size = new System.Drawing.Size(97, 24);
             this.label1.TabIndex = 23;
             this.label1.Text = "Password:";
             // 
@@ -75,7 +75,7 @@
             this.buttonLogin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
             this.buttonLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLogin.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonLogin.Location = new System.Drawing.Point(137, 85);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(182, 35);
@@ -93,8 +93,8 @@
             this.buttonCleanup.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
             this.buttonCleanup.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.buttonCleanup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCleanup.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCleanup.Location = new System.Drawing.Point(12, 83);
+            this.buttonCleanup.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCleanup.Location = new System.Drawing.Point(12, 85);
             this.buttonCleanup.Name = "buttonCleanup";
             this.buttonCleanup.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.buttonCleanup.Size = new System.Drawing.Size(119, 35);
@@ -106,7 +106,7 @@
             // 
             // CheckPasswordForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(327, 132);
@@ -114,7 +114,7 @@
             this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.buttonLogin);
             this.Controls.Add(this.panel1);
-            this.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;

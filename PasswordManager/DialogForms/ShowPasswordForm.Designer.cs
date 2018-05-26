@@ -44,9 +44,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 26);
+            this.label1.Location = new System.Drawing.Point(12, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 15);
+            this.label1.Size = new System.Drawing.Size(71, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Password:";
             // 
@@ -59,7 +59,7 @@
             this.buttonClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
             this.buttonClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.buttonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonClose.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonClose.Location = new System.Drawing.Point(183, 117);
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(92, 36);
@@ -78,7 +78,7 @@
             this.buttonCopy.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
             this.buttonCopy.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.buttonCopy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCopy.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCopy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCopy.Location = new System.Drawing.Point(12, 117);
             this.buttonCopy.Name = "buttonCopy";
             this.buttonCopy.Size = new System.Drawing.Size(164, 36);
@@ -91,8 +91,8 @@
             // labelPassword
             // 
             this.labelPassword.AutoSize = true;
-            this.labelPassword.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPassword.Location = new System.Drawing.Point(86, 28);
+            this.labelPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPassword.Location = new System.Drawing.Point(86, 33);
             this.labelPassword.Name = "labelPassword";
             this.labelPassword.Size = new System.Drawing.Size(60, 15);
             this.labelPassword.TabIndex = 34;
@@ -101,18 +101,18 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 54);
+            this.label2.Location = new System.Drawing.Point(12, 59);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(36, 15);
+            this.label2.Size = new System.Drawing.Size(40, 16);
             this.label2.TabIndex = 35;
             this.label2.Text = "User:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 82);
+            this.label3.Location = new System.Drawing.Point(12, 87);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(25, 15);
+            this.label3.Size = new System.Drawing.Size(28, 16);
             this.label3.TabIndex = 36;
             this.label3.Text = "Url:";
             // 
@@ -120,9 +120,9 @@
             // 
             this.linkLabelUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.linkLabelUser.AutoSize = true;
-            this.linkLabelUser.Location = new System.Drawing.Point(239, 54);
+            this.linkLabelUser.Location = new System.Drawing.Point(239, 59);
             this.linkLabelUser.Name = "linkLabelUser";
-            this.linkLabelUser.Size = new System.Drawing.Size(35, 15);
+            this.linkLabelUser.Size = new System.Drawing.Size(40, 16);
             this.linkLabelUser.TabIndex = 37;
             this.linkLabelUser.TabStop = true;
             this.linkLabelUser.Text = "Copy";
@@ -132,9 +132,9 @@
             // 
             this.linkLabelURL.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.linkLabelURL.AutoSize = true;
-            this.linkLabelURL.Location = new System.Drawing.Point(239, 82);
+            this.linkLabelURL.Location = new System.Drawing.Point(239, 87);
             this.linkLabelURL.Name = "linkLabelURL";
-            this.linkLabelURL.Size = new System.Drawing.Size(35, 15);
+            this.linkLabelURL.Size = new System.Drawing.Size(40, 16);
             this.linkLabelURL.TabIndex = 38;
             this.linkLabelURL.TabStop = true;
             this.linkLabelURL.Text = "Copy";
@@ -143,23 +143,25 @@
             // labelUser
             // 
             this.labelUser.AutoSize = true;
-            this.labelUser.Location = new System.Drawing.Point(86, 54);
+            this.labelUser.Location = new System.Drawing.Point(86, 59);
             this.labelUser.Name = "labelUser";
-            this.labelUser.Size = new System.Drawing.Size(32, 15);
+            this.labelUser.Size = new System.Drawing.Size(34, 16);
             this.labelUser.TabIndex = 39;
             this.labelUser.Text = "user";
             // 
             // labelURL
             // 
             this.labelURL.AutoSize = true;
-            this.labelURL.Location = new System.Drawing.Point(86, 82);
+            this.labelURL.Location = new System.Drawing.Point(86, 87);
             this.labelURL.Name = "labelURL";
-            this.labelURL.Size = new System.Drawing.Size(30, 15);
+            this.labelURL.Size = new System.Drawing.Size(35, 16);
             this.labelURL.TabIndex = 40;
             this.labelURL.Text = "URL";
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.Black;
             this.panel1.Location = new System.Drawing.Point(-1, -2);
             this.panel1.Name = "panel1";
@@ -168,7 +170,7 @@
             // 
             // ShowPasswordForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(287, 163);
@@ -183,7 +185,7 @@
             this.Controls.Add(this.buttonClose);
             this.Controls.Add(this.buttonCopy);
             this.Controls.Add(this.label1);
-            this.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "ShowPasswordForm";

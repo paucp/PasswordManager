@@ -14,6 +14,16 @@ namespace PasswordManager
             File.Delete(Settings.LoginDataPath);
             Environment.Exit(0);
         }
+        public static void LoadLoginData()
+        {
+            byte[] FileBuffer = File.ReadAllBytes(Settings.LoginDataPath);
+            CurrentSession.SetLoginData(LoginDataManager.DecodeLoginData(FileBuffer));
+        }
+        public static bool IsPasswordCorrect(string MasterKey)
+            => LoginDataManager.CheckPassword(MasterKey);
+
+        public static void SetSessionKey(string MasterKey)
+           => LoginDataManager.SetSessionMasterKey(MasterKey);   
 
         public static void GenerateNewSessionAndSave(string MasterKey)
         {
@@ -21,19 +31,11 @@ namespace PasswordManager
             SetSessionKey(MasterKey);
             SaveCurrentSessionLoginData();
         }
-
-        public static void SetSessionKey(string MasterKey)
-           => LoginDataManager.SetSessionMasterKey(MasterKey);
-
-        public static void LoadLoginData()
+        public static void GenerateNewSessionAndSave()
         {
-            byte[] FileBuffer = File.ReadAllBytes(Settings.LoginDataPath);
-            CurrentSession.SetLoginData(LoginDataManager.DecodeLoginData(FileBuffer));
+            CurrentSession.SetLoginData(LoginDataManager.GenerateCryptoRNGLoginData());
+            SaveCurrentSessionLoginData();
         }
-
-        public static bool IsPasswordCorrect(string MasterKey)
-            => LoginDataManager.CheckPassword(MasterKey);
-
         private static void SaveCurrentSessionLoginData()
             => File.WriteAllBytes(Settings.LoginDataPath, LoginDataManager.EncodeLoginData(CurrentSession.SessionLoginData));
     }

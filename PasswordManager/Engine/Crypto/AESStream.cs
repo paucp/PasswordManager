@@ -21,17 +21,18 @@ namespace PasswordManager.Engine.Crypto
            => new CryptoStream(BaseStream, CreateAES().CreateEncryptor(), CryptoStreamMode.Write);
 
         private static CryptoStream CreateDecryptionStream(Stream BaseStream)
-            => new CryptoStream(BaseStream, CreateAES().CreateDecryptor(), CryptoStreamMode.Read);
+            => new CryptoStream(BaseStream, CreateAES().CreateDecryptor(), CryptoStreamMode.Read);      
 
         private static RijndaelManaged CreateAES()
         {
             RijndaelManaged AES = new RijndaelManaged();
             AES.KeySize = Settings.AESKeySize;
             AES.BlockSize = Settings.AESBlockSize;
-            AES.Key = CurrentSession.SessionLoginData.DerivedMasterkey;
+            AES.Key = CurrentSession.DerivedMasterKey;
             AES.IV = CurrentSession.SessionLoginData.IV;
             AES.Mode = CipherMode.CBC;
             return AES;
         }
+       
     }
 }

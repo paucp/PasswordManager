@@ -42,25 +42,28 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(-2, -1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(329, 45);
+            this.panel1.Size = new System.Drawing.Size(329, 32);
             this.panel1.TabIndex = 14;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.label1.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(14, 10);
+            this.label1.Location = new System.Drawing.Point(14, 7);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 24);
+            this.label1.Size = new System.Drawing.Size(79, 19);
             this.label1.TabIndex = 23;
             this.label1.Text = "Password:";
             // 
             // textBoxPassword
             // 
+            this.textBoxPassword.BackColor = System.Drawing.Color.White;
+            this.textBoxPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxPassword.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPassword.Location = new System.Drawing.Point(9, 52);
+            this.textBoxPassword.ForeColor = System.Drawing.Color.Black;
+            this.textBoxPassword.Location = new System.Drawing.Point(12, 37);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.Size = new System.Drawing.Size(310, 25);
             this.textBoxPassword.TabIndex = 24;
@@ -72,16 +75,16 @@
             this.buttonLogin.BackColor = System.Drawing.Color.Gainsboro;
             this.buttonLogin.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.buttonLogin.FlatAppearance.BorderSize = 0;
-            this.buttonLogin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
+            this.buttonLogin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGray;
             this.buttonLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonLogin.Location = new System.Drawing.Point(137, 85);
+            this.buttonLogin.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonLogin.Location = new System.Drawing.Point(140, 72);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(182, 35);
             this.buttonLogin.TabIndex = 22;
             this.buttonLogin.TabStop = false;
-            this.buttonLogin.Text = "Enter";
+            this.buttonLogin.Text = "Login";
             this.buttonLogin.UseVisualStyleBackColor = false;
             this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
             // 
@@ -90,17 +93,17 @@
             this.buttonCleanup.BackColor = System.Drawing.Color.Gainsboro;
             this.buttonCleanup.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.buttonCleanup.FlatAppearance.BorderSize = 0;
-            this.buttonCleanup.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
+            this.buttonCleanup.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGray;
             this.buttonCleanup.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.buttonCleanup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCleanup.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCleanup.Location = new System.Drawing.Point(12, 85);
+            this.buttonCleanup.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCleanup.Location = new System.Drawing.Point(15, 72);
             this.buttonCleanup.Name = "buttonCleanup";
             this.buttonCleanup.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.buttonCleanup.Size = new System.Drawing.Size(119, 35);
             this.buttonCleanup.TabIndex = 25;
             this.buttonCleanup.TabStop = false;
-            this.buttonCleanup.Text = "Delete data";
+            this.buttonCleanup.Text = "Wipe data";
             this.buttonCleanup.UseVisualStyleBackColor = false;
             this.buttonCleanup.Click += new System.EventHandler(this.buttonCleanup_Click);
             // 
@@ -109,7 +112,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(327, 132);
+            this.ClientSize = new System.Drawing.Size(327, 119);
             this.Controls.Add(this.buttonCleanup);
             this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.buttonLogin);

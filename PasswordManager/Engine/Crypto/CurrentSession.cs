@@ -1,11 +1,17 @@
-﻿namespace PasswordManager.Engine.Crypto
+﻿using System.Text;
+
+namespace PasswordManager.Engine.Crypto
 {
     public static class CurrentSession
     {
-        private static LoginData SessionData;
-        public static LoginData SessionLoginData => SessionData;
+        public static byte[] MasterKey { get; private set; }
+        public static byte[] MasterHash => CryptoFunctions.SHA3512(MasterKey);
+        public static byte[] DerivedMasterKey => CryptoFunctions.DeriveKey(MasterKey, SessionLoginData.Salt, Settings.DerivedSize);
+        public static LoginData SessionLoginData { get; private set; }   
 
         public static void SetLoginData(LoginData data)
-            => SessionData = data;
+            => SessionLoginData = data;
+
+        public static void SetMasterKey(string keystr) => MasterKey = Encoding.UTF8.GetBytes(keystr);
     }
 }

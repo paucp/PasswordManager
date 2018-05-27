@@ -192,7 +192,6 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ShowPasswordForm";
-            this.Load += new System.EventHandler(this.ShowPasswordForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

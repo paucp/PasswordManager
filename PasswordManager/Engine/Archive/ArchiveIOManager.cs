@@ -31,6 +31,7 @@ namespace PasswordManager.Engine.Archive
                 DeleteArchive();
                 return;
             }
+            UserDataIOManager.GenerateNewSessionAndSave();
             Stream CryptoStream = Crypto.AESStream.CtrEncryptionStreamCurrentSession(BaseStream);
             ArchiveWriter Writer = new ArchiveWriter(CryptoStream, EntryList.Count);
             try

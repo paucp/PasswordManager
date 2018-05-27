@@ -25,12 +25,18 @@ namespace PasswordManager
 
         public void ShowPassword(EntryData entry)
         {
-            Entry = entry;
+            Entry = entry;          
+            if (entry.Password.Length > 100)
+                labelPassword.Font = new System.Drawing.Font(labelPassword.Font.FontFamily, 7);
+            if(entry.Password.Length > 150)
+                labelPassword.Font = new System.Drawing.Font(labelPassword.Font.FontFamily, 6);
+            if (entry.Password.Length > 200)
+                labelPassword.Font = new System.Drawing.Font(labelPassword.Font.FontFamily, 5);
             labelPassword.Text = Entry.Password;
             labelUser.Text = Entry.Username;
             labelURL.Text = Entry.Url;
             int MaxWidth = Max(Max(labelUser.Width, labelURL.Width), labelPassword.Width) + 180;
-            this.Width = MaxWidth;
+            Width = MaxWidth;
             ShowDialog();
         }
 
@@ -54,9 +60,5 @@ namespace PasswordManager
 
         private void linkLabelURL_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
             => SetClipboard(Entry.Url);
-
-        private void ShowPasswordForm_Load(object sender, EventArgs e)
-        {
-        }
     }
 }

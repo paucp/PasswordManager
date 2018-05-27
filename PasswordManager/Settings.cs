@@ -5,9 +5,9 @@ namespace PasswordManager
 {
     public static class Settings
     {
-        public const string CurrentVersion = "0.8";
+        public const string CurrentVersion = "0.9";
 
-        public static Color ColorAccent = Color.FromArgb(255, 63, 81, 181);
+        public static Color ColorAccent = Color.FromArgb(255, 63, 81, 181);       
         public static Color SearchBoxFocusColor = Color.FromArgb(200, 96, 125, 170);
 
         public const string SearchIconText = "";

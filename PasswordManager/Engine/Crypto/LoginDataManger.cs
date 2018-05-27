@@ -29,7 +29,7 @@ namespace PasswordManager.Engine.Crypto
         public static byte[] EncodeLoginData(LoginData Data)
         {
             EncodingStream ec = new EncodingStream();
-            ec.WriteEntry(Data.MasterHash);
+            ec.WriteEntry(CurrentSession.MasterHash);
             ec.WriteEntry(Data.Salt);
             ec.WriteEntry(Data.IV);
             ec.Close();
@@ -38,22 +38,18 @@ namespace PasswordManager.Engine.Crypto
 
         public static LoginData GenerateCryptoRNGLoginData()
         {
-            RNGCryptoServiceProvider CSP = new RNGCryptoServiceProvider();
-            byte[] Salt = new byte[Settings.SaltSize];
-            byte[] IV = new byte[Settings.IVSize];
-            CSP.GetBytes(Salt);
-            CSP.GetBytes(IV);
+            byte[] Salt = CryptoFunctions.GenerateCryptoSecureKey(Settings.SaltSize);
+            byte[] IV = CryptoFunctions.GenerateCryptoSecureKey(Settings.IVSize);
             return new LoginData(Salt, IV);
         }
 
         public static void SetSessionMasterKey(string MasterKeyString)
         {
             byte[] MasterKey = Encoding.UTF8.GetBytes(MasterKeyString);
-            Rfc2898DeriveBytes pdb = new Rfc2898DeriveBytes(MasterKey, CurrentSession.SessionLoginData.Salt, Settings.AESPBKDF2Iterations);
-            byte[] DerivedKey = pdb.GetBytes(Settings.DerivedSize);
+           
             byte[] Hash = SHA3512(MasterKey);
             CurrentSession.SessionLoginData.SetKeys(MasterKey, Hash, DerivedKey);
-        }
+        }     
 
         private static bool Compare(byte[] a, byte[] b)
         {

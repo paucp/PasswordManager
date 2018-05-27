@@ -59,7 +59,7 @@
             this.buttonAdd.BackColor = System.Drawing.Color.Gainsboro;
             this.buttonAdd.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.buttonAdd.FlatAppearance.BorderSize = 0;
-            this.buttonAdd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
+            this.buttonAdd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGray;
             this.buttonAdd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.buttonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAdd.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -78,7 +78,7 @@
             this.buttonShow.Enabled = false;
             this.buttonShow.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.buttonShow.FlatAppearance.BorderSize = 0;
-            this.buttonShow.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
+            this.buttonShow.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGray;
             this.buttonShow.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.buttonShow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonShow.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -116,7 +116,7 @@
             this.buttonDelete.Enabled = false;
             this.buttonDelete.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.buttonDelete.FlatAppearance.BorderSize = 0;
-            this.buttonDelete.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
+            this.buttonDelete.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGray;
             this.buttonDelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDelete.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -134,7 +134,7 @@
             this.buttonDeleteAll.BackColor = System.Drawing.Color.Gainsboro;
             this.buttonDeleteAll.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.buttonDeleteAll.FlatAppearance.BorderSize = 0;
-            this.buttonDeleteAll.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
+            this.buttonDeleteAll.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGray;
             this.buttonDeleteAll.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.buttonDeleteAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDeleteAll.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -153,7 +153,7 @@
             this.buttonEdit.Enabled = false;
             this.buttonEdit.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.buttonEdit.FlatAppearance.BorderSize = 0;
-            this.buttonEdit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
+            this.buttonEdit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGray;
             this.buttonEdit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.buttonEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonEdit.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -176,7 +176,7 @@
             this.columnHeader4});
             this.materialListView1.ContextMenuStrip = this.materialContextMenuStrip1;
             this.materialListView1.Depth = 0;
-            this.materialListView1.Font = new System.Drawing.Font("Roboto", 24F);
+            this.materialListView1.Font = new System.Drawing.Font("Roboto", 12F);
             this.materialListView1.FullRowSelect = true;
             this.materialListView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.materialListView1.Location = new System.Drawing.Point(2, 102);

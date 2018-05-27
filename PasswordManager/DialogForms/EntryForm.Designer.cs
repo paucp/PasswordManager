@@ -65,7 +65,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(12, 251);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(116, 15);
+            this.label6.Size = new System.Drawing.Size(117, 17);
             this.label6.TabIndex = 29;
             this.label6.Text = "Repeat Password:*";
             // 
@@ -82,7 +82,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(12, 161);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(36, 15);
+            this.label5.Size = new System.Drawing.Size(37, 17);
             this.label5.TabIndex = 28;
             this.label5.Text = "URL: ";
             // 
@@ -99,7 +99,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(12, 122);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 15);
+            this.label4.Size = new System.Drawing.Size(66, 17);
             this.label4.TabIndex = 27;
             this.label4.Text = "Comment:";
             // 
@@ -116,7 +116,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(12, 78);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(36, 15);
+            this.label3.Size = new System.Drawing.Size(37, 17);
             this.label3.TabIndex = 26;
             this.label3.Text = "User:";
             // 
@@ -133,7 +133,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(12, 40);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 15);
+            this.label2.Size = new System.Drawing.Size(80, 17);
             this.label2.TabIndex = 25;
             this.label2.Text = "Entry name:*\r\n";
             // 
@@ -160,7 +160,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 206);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 15);
+            this.label1.Size = new System.Drawing.Size(74, 17);
             this.label1.TabIndex = 22;
             this.label1.Text = "Password:*";
             // 
@@ -169,7 +169,7 @@
             this.buttonAccept.BackColor = System.Drawing.Color.Gainsboro;
             this.buttonAccept.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.buttonAccept.FlatAppearance.BorderSize = 0;
-            this.buttonAccept.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
+            this.buttonAccept.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGray;
             this.buttonAccept.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.buttonAccept.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAccept.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -187,7 +187,7 @@
             this.buttonCancel.BackColor = System.Drawing.Color.Gainsboro;
             this.buttonCancel.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.buttonCancel.FlatAppearance.BorderSize = 0;
-            this.buttonCancel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
+            this.buttonCancel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGray;
             this.buttonCancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.buttonCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCancel.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -205,7 +205,7 @@
             this.button1.BackColor = System.Drawing.Color.Gainsboro;
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGray;
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -223,7 +223,7 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(12, 294);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(151, 15);
+            this.label7.Size = new System.Drawing.Size(152, 17);
             this.label7.TabIndex = 33;
             this.label7.Text = "Random password length";
             // 
@@ -254,7 +254,7 @@
             this.checkBoxShowPasswords.AutoSize = true;
             this.checkBoxShowPasswords.Location = new System.Drawing.Point(297, 290);
             this.checkBoxShowPasswords.Name = "checkBoxShowPasswords";
-            this.checkBoxShowPasswords.Size = new System.Drawing.Size(125, 19);
+            this.checkBoxShowPasswords.Size = new System.Drawing.Size(126, 21);
             this.checkBoxShowPasswords.TabIndex = 35;
             this.checkBoxShowPasswords.Text = "Show Passwords";
             this.checkBoxShowPasswords.UseVisualStyleBackColor = true;
@@ -262,7 +262,7 @@
             // 
             // EntryForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(469, 381);

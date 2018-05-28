@@ -6,37 +6,48 @@ namespace PasswordManager
 {
     public static class UserDataIOManager
     {
-        public static bool LoginDataFileExists => File.Exists(Settings.LoginDataPath);
+        public static bool LoginDataExists => File.Exists(Settings.CryptoRNGPath) && File.Exists(Settings.HashPath);
 
         public static void DeleteAllUserData()
         {
             File.Delete(Settings.ArchivePath);
-            File.Delete(Settings.LoginDataPath);
+            File.Delete(Settings.CryptoRNGPath);
+            File.Delete(Settings.HashPath);
             Environment.Exit(0);
         }
-        public static void LoadLoginData()
-        {
-            byte[] FileBuffer = File.ReadAllBytes(Settings.LoginDataPath);
-            CurrentSession.SetLoginData(LoginDataManager.DecodeLoginData(FileBuffer));
-        }
-        public static bool IsPasswordCorrect(string MasterKey)
-            => LoginDataManager.CheckPassword(MasterKey);
 
-        public static void SetSessionKey(string MasterKey)
-           => LoginDataManager.SetSessionMasterKey(MasterKey);   
+        public static void GenerateNewCryptoRNGAndSave()
+        {
+            CurrentSession.SetCryptoRNGData(LoginDataManager.GenerateCryptoRNGLoginData());
+            SaveCryptoRNGData();
+        }
 
         public static void GenerateNewSessionAndSave(string MasterKey)
         {
-            CurrentSession.SetLoginData(LoginDataManager.GenerateCryptoRNGLoginData());
-            SetSessionKey(MasterKey);
-            SaveCurrentSessionLoginData();
+            GenerateNewCryptoRNGAndSave();
+            SaveSession(MasterKey);
         }
-        public static void GenerateNewSessionAndSave()
+
+        public static bool IsPasswordCorrect(string MasterKey)
+            => LoginDataManager.CheckPassword(MasterKey, File.ReadAllBytes(Settings.HashPath));
+
+        public static void LoadCryptoRNGData()
         {
-            CurrentSession.SetLoginData(LoginDataManager.GenerateCryptoRNGLoginData());
-            SaveCurrentSessionLoginData();
+            byte[] FileBuffer = File.ReadAllBytes(Settings.CryptoRNGPath);
+            CurrentSession.SetCryptoRNGData(LoginDataManager.DecodeCryptoRNGData(FileBuffer));
         }
-        private static void SaveCurrentSessionLoginData()
-            => File.WriteAllBytes(Settings.LoginDataPath, LoginDataManager.EncodeLoginData(CurrentSession.SessionLoginData));
+        public static void SaveSession(string MasterKey)
+        {
+            SetSessionKey(MasterKey);
+            SaveHash();
+        }
+
+        public static void SetSessionKey(string MasterKey)
+                   => CurrentSession.SetMasterKey(MasterKey);
+        private static void SaveCryptoRNGData()
+            => File.WriteAllBytes(Settings.CryptoRNGPath, LoginDataManager.EncodeCryptoRNGData(CurrentSession.SessionLoginData));
+
+        private static void SaveHash()
+            => File.WriteAllBytes(Settings.HashPath, CurrentSession.MasterKeyHash);
     }
 }

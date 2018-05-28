@@ -5,9 +5,9 @@ namespace PasswordManager
 {
     public static class Settings
     {
-        public const string CurrentVersion = "0.9";
+        public const string CurrentVersion = "0.9.1";
 
-        public static Color ColorAccent = Color.FromArgb(255, 63, 81, 181);       
+        public static Color ColorAccent = Color.FromArgb(255, 63, 81, 181);
         public static Color SearchBoxFocusColor = Color.FromArgb(200, 96, 125, 170);
 
         public const string SearchIconText = "";
@@ -24,7 +24,8 @@ namespace PasswordManager
         public static string DataFolderPath = Application.StartupPath + @"\Data\";
         public static string UserDataFolderPath = Application.StartupPath + @"\UserData\";
 
-        public static string LoginDataPath = UserDataFolderPath + "login.pm";
+        public static string CryptoRNGPath = UserDataFolderPath + "cryrng.pm";
+        public static string HashPath = UserDataFolderPath + "hash.pm";
         public static string ArchivePath = UserDataFolderPath + "archive.pm";
         public static string PasswordListFilePath = DataFolderPath + "list.spm";
         public static string Charmap = DataFolderPath + "charmap.src";

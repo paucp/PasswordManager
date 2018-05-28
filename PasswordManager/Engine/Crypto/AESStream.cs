@@ -21,7 +21,7 @@ namespace PasswordManager.Engine.Crypto
            => new CryptoStream(BaseStream, CreateAES().CreateEncryptor(), CryptoStreamMode.Write);
 
         private static CryptoStream CreateDecryptionStream(Stream BaseStream)
-            => new CryptoStream(BaseStream, CreateAES().CreateDecryptor(), CryptoStreamMode.Read);      
+            => new CryptoStream(BaseStream, CreateAES().CreateDecryptor(), CryptoStreamMode.Read);
 
         private static RijndaelManaged CreateAES()
         {
@@ -33,6 +33,5 @@ namespace PasswordManager.Engine.Crypto
             AES.Mode = CipherMode.CBC;
             return AES;
         }
-       
     }
 }

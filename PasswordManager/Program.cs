@@ -10,9 +10,9 @@ namespace PasswordManager
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            if (!UserDataIOManager.LoginDataFileExists)
+            if (!UserDataIOManager.LoginDataExists)
                 new NewPasswordForm().ShowDialog();
-            else UserDataIOManager.LoadLoginData();
+            else UserDataIOManager.LoadCryptoRNGData();
             CheckPasswordForm CheckPWForm = new CheckPasswordForm();
             CheckPWForm.ShowDialog();
             if (CheckPWForm.LoggedIn)

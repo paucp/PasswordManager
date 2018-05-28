@@ -41,7 +41,7 @@ namespace PasswordManager
 
         private void SetPasswordTask()
         {
-            UserDataIOManager.GenerateNewSessionAndSave(textBoxPassword1.Text);
+            UserDataIOManager.SaveSession(textBoxPassword1.Text);
             PasswordSet = true;
             Invoke((MethodInvoker)delegate
             {

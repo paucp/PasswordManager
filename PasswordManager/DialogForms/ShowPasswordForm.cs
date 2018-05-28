@@ -25,10 +25,10 @@ namespace PasswordManager
 
         public void ShowPassword(EntryData entry)
         {
-            Entry = entry;          
+            Entry = entry;
             if (entry.Password.Length > 100)
                 labelPassword.Font = new System.Drawing.Font(labelPassword.Font.FontFamily, 7);
-            if(entry.Password.Length > 150)
+            if (entry.Password.Length > 150)
                 labelPassword.Font = new System.Drawing.Font(labelPassword.Font.FontFamily, 6);
             if (entry.Password.Length > 200)
                 labelPassword.Font = new System.Drawing.Font(labelPassword.Font.FontFamily, 5);

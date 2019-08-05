@@ -10,8 +10,7 @@ namespace PasswordManager
         private bool PasswordSet = false;
 
         public NewPasswordForm()
-        {
-            SafePasswordChecker.LoadPasswords();
+        {            
             InitializeComponent();
             panel1.BackColor = Settings.ColorAccent;
         }
@@ -22,12 +21,11 @@ namespace PasswordManager
         {
             if (textBoxPassword1.Text != "" && textBoxPassword1.Text == textBoxPassword2.Text)
             {
-                if (SafePasswordChecker.IsUsedPassword(textBoxPassword1.Text) || textBoxPassword1.Text.Length < Settings.MinPasswordLength)
+                if (textBoxPassword1.Text.Length < Settings.MinPasswordLength)
                 {
-                    CMessageBox.ShowDialog("This password is not safe and can't be used (Minimum 12 characters, top 100.000 used passwords not allowed)", "Error");
+                    CMessageBox.ShowDialog("This password is not safe and can't be used, Minimum 12 characters", "Error");
                     return;
-                }
-                SafePasswordChecker.ReleasePasswords();
+                }                
                 label1.Text = "Password: Setting ...";
                 textBoxPassword1.Enabled = false;
                 textBoxPassword2.Enabled = false;

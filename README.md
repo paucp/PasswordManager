@@ -21,12 +21,6 @@ string Password;
 
 
 
-UI Images:
-
-![picture](img/1.png)
-
-
-![picture](img/2.png)
-
+UI Image:
 
 ![picture](img/3.png)
